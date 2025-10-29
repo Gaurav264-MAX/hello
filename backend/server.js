@@ -12,6 +12,9 @@ const Register = require('./models/register.js');
 const Order = require('./models/Order.js');
 const Review = require('./models/review.js');
 const multer = require('multer');
+const { fileURLToPath } = require("url");
+
+
 // MongoDB connection
 mongoose
     .connect('mongodb+srv://gaurav62838amazon:ZP2K5XT9i83CkHwv@ecom.lunui3o.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=Ecommerce', {
@@ -729,3 +732,14 @@ app.listen(3000, () => {
         }
     });
 });
+
+
+
+
+// ✅ Serve frontend (React) in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"))
+  );
+}

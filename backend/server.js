@@ -13,7 +13,7 @@ const Order = require('./models/Order.js');
 const Review = require('./models/review.js');
 const multer = require('multer');
 const { fileURLToPath } = require("url");
-const __dirname = path.resolve();
+
 
 // MongoDB connection
 mongoose

@@ -1,0 +1,102 @@
+.product-form {
+  width: 75vw;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(56, 189, 248, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form button[type="submit"],
+.product-form button[type="button"],
+.product-form ul {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"] {
+  padding: 12px 14px;
+  border: 1px solid #e0e5ec;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f7fafc;
+  transition: border 0.2s;
+}
+
+.product-form input[type="text"]:focus,
+.product-form input[type="number"]:focus {
+  border: 1.5px solid #60a5fa;
+  outline: none;
+  background: #e3f0ff;
+}
+
+.product-form input[type="file"] {
+  background: #f7fafc;
+  border: none;
+  padding: 8px 0;
+}
+
+.product-form button[type="submit"] {
+  background: linear-gradient(90deg, #60a5fa 0%, #38bdf8 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.10);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.product-form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #38bdf8 0%, #60a5fa 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.product-form button[type="button"] {
+  background: #e3f0ff;
+  color: #2563eb;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  margin-left: 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.product-form button[type="button"]:hover {
+  background: #60a5fa;
+  color: #fff;
+}
+
+.product-form ul {
+  list-style: disc inside;
+  margin: 0 0 0 10px;
+  padding: 0;
+  color: #2563eb;
+  font-size: 1rem;
+}
+
+.product-form li {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .product-form {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 18px 0;
+  }
+} 

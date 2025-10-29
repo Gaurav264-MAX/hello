@@ -1,0 +1,11 @@
+.carousel {
+    width: 200px;
+    height: 200px;
+    margin: auto; /* Center the carousel */
+  }
+  
+  .carousel-inner img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Ensures images fit properly */
+  }

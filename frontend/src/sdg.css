@@ -1,0 +1,129 @@
+/* Modern gradient background */
+body {
+    background: linear-gradient(-45deg, #3a1c71, #d76d77, #ffaf7b);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Form container */
+  .form-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Heading */
+  h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form layout */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Labels */
+  label {
+    font-weight: bold;
+    text-align: left;
+    width: 70%;
+    margin-top: 12px;
+    font-size: 16px;
+  }
+  
+  /* Input fields - Wider and better glow effect */
+  input, textarea {
+    width: 70%;
+    padding: 12px;
+    border: 3px solid #ff7f50; /* Coral border */
+    border-radius: 6px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  /* Placeholder color */
+  input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Input focus effect with new contrast color */
+  input:focus, textarea:focus {
+    border-color: #ffeb3b; /* Bright yellow glow */
+    box-shadow: 0 0 12px rgba(255, 235, 59, 0.8);
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Textarea */
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  /* Submit button */
+  button {
+    margin-top: 20px;
+    padding: 14px;
+    width: 70%;
+    background: linear-gradient(90deg, #ff7f50, #ff6347);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background: linear-gradient(90deg, #ff6347, #ff7f50);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .form-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    label, input, textarea, button {
+      width: 90%;
+    }
+  }
+
+
+
+  

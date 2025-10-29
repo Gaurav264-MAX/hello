@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .footer-top, .footer-bottom {
+            background-color: #232526 !important;
+        }
+        body {
+            background-color: #232526 !important;
+        }
+        .page-wrapper {
+            background-color: #232526 !important;
+        }
+
+        /* Footer Layout Styles */
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            padding: 2rem 0;
+            color: #fff;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .footer-column {
+            min-width: 0;
+            word-wrap: break-word;
+        }
+
+        .footer-column h5 {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+            word-wrap: break-word;
+        }
+
+        .footer-column ul li a:hover {
+            color: #e754e7;
+        }
+
+        .contact-info {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .contact-info div {
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #444;
+            border-radius: 25px;
+            background: #333;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: #999;
+        }
+
+        .newsletter-submit {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #e754e7, #a259ff);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .newsletter-submit:hover {
+            transform: translateY(-2px);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .payment-method {
+            padding: 0.4rem 0.8rem;
+            background: #333;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Footer Animation Styles */
+        .footer-top, .footer-bottom, .footer-title, .gem-contacts-item, 
+        .contact-form-footer, .socials-item, #footer-menu li {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .footer-animate .footer-top {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+        }
+
+        .footer-animate .footer-bottom {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s both;
+        }
+
+        .footer-animate .footer-title {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s both;
+        }
+
+        .footer-animate .gem-contacts-item {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s both;
+        }
+
+        .footer-animate .contact-form-footer {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s both;
+        }
+
+        .footer-animate .socials-item {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s both;
+        }
+
+        .footer-animate #footer-menu li {
+            animation: slideUpFade 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s both;
+        }
+
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Staggered animations for multiple elements */
+        .footer-animate .gem-contacts-item:nth-child(1) { animation-delay: 0.4s; }
+        .footer-animate .gem-contacts-item:nth-child(2) { animation-delay: 0.5s; }
+        .footer-animate .gem-contacts-item:nth-child(3) { animation-delay: 0.6s; }
+        .footer-animate .gem-contacts-item:nth-child(4) { animation-delay: 0.7s; }
+
+        .footer-animate .socials-item:nth-child(1) { animation-delay: 0.6s; }
+        .footer-animate .socials-item:nth-child(2) { animation-delay: 0.7s; }
+        .footer-animate .socials-item:nth-child(3) { animation-delay: 0.8s; }
+        .footer-animate .socials-item:nth-child(4) { animation-delay: 0.9s; }
+        .footer-animate .socials-item:nth-child(5) { animation-delay: 1.0s; }
+
+        .footer-animate #footer-menu li:nth-child(1) { animation-delay: 0.7s; }
+        .footer-animate #footer-menu li:nth-child(2) { animation-delay: 0.8s; }
+        .footer-animate #footer-menu li:nth-child(3) { animation-delay: 0.9s; }
+        .footer-animate #footer-menu li:nth-child(4) { animation-delay: 1.0s; }
+
+        /* Container adjustments */
+        .container {
+            max-width: 100%;
+            padding: 0 1rem;
+            overflow-x: hidden;
+        }
+
+        /* Form field adjustments */
+        .wpcf7-form-control {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .footer-columns {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-columns {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .footer-animate .gem-contacts-item,
+            .footer-animate .socials-item,
+            .footer-animate #footer-menu li {
+                animation-delay: 0.3s !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div id="waterdrop"></div>
+        <footer>
+            <div class="footer-top">
+                <div class="pt-exebar"></div>
+
+                <div class="container">
+                    <div class="footer-columns">
+                        <!-- Contact Us Column -->
+                        <div class="footer-column">
+                            <h5>Contact Us</h5>
+                            <div class="contact-info">
+                                <div>Doon House, B-275(A), First floor Sector-57, Shushant Lok 3 Near Hong Kong Bazzar, Gurugram Pin 122001, Haryana.</div>
+                                <div style="margin-top: 0.5rem;">+91-9122588799</div>
+                                <div style="margin-top: 0.5rem;">GearnixStore@Vinova.com</div>
+                                <div style="margin-top: 0.5rem;">@VinovaGear</div>
+                            </div>
+                        </div>
+
+                        <!-- Let Us Help Column -->
+                        <div class="footer-column">
+                            <h5>Let Us Help</h5>
+                            <ul>
+                                <li><a href="#">Track My Order</a></li>
+                                <li><a href="#">Cancel My Order</a></li>
+                                <li><a href="#">Return My Order</a></li>
+                                <li><a href="#">Search</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Our Policies Column -->
+                        <div class="footer-column">
+                            <h5>Our Policies</h5>
+                            <ul>
+                                <li><a href="#">Shipping & Delivery</a></li>
+                                <li><a href="#">Returns & Cancellations</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- My Account Column -->
+                        <div class="footer-column">
+                            <h5>My Account</h5>
+                            <ul>
+                                <li><a href="#">Help and advice</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                                <li><a href="#">Terms and conditions</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Newsletters Column -->
+                        <div class="footer-column">
+                            <h5>Newsletters</h5>
+                            <form method="post" class="wpcf7-form" novalidate="novalidate">
+                                <div class="contact-form-footer" style="display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+                                    <p style="margin-bottom: 1rem; width: 100%;">
+                                        <span class="wpcf7-form-control-wrap your-first-name">
+                                            <input type="text" name="your-first-name" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Your name" style="width: 100%; padding: 0.8rem; border: 1px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 0.9rem;">
+                                        </span>
+                                    </p>
+                                    <p style="margin-bottom: 1rem; width: 100%;">
+                                        <span class="wpcf7-form-control-wrap your-email_1">
+                                            <input type="email" name="your-email_1" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" placeholder="Your email" style="width: 100%; padding: 0.8rem; border: 1px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 0.9rem;">
+                                        </span>
+                                    </p>
+                                    <p style="margin-bottom: 1rem; width: 100%;">
+                                        <span class="wpcf7-form-control-wrap your-message">
+                                            <textarea name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea" placeholder="Your message" style="width: 100%; padding: 0.8rem; border: 1px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 0.9rem; resize: vertical; min-height: 80px;"></textarea>
+                                        </span>
+                                    </p>
+                                    <div style="width: 100%;">
+                                        <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" style="width: 100%; padding: 0.8rem 1.5rem; background: linear-gradient(45deg, #e754e7, #a259ff); border: none; border-radius: 8px; color: #fff; font-weight: 600; cursor: pointer; transition: transform 0.3s ease; font-size: 0.9rem;">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Payments Column -->
+                        <div class="footer-column">
+                            <h5>Payments</h5>
+                            <div class="payment-methods">
+                                <div class="payment-method">VISA</div>
+                                <div class="payment-method">P</div>
+                                <div class="payment-method">RuPay</div>
+                                <div class="payment-method">AMERICAN EXPRESS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom Section -->
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 10px 0;">
+                            
+                            <!-- Footer Menu (Center) -->
+                            <div style="flex: 1; text-align: center;">
+                                <nav id="footer-navigation" class="site-navigation footer-navigation centered-box" role="navigation">
+                                    <ul id="footer-menu" class="nav-menu styled clearfix inline-inside" style="display: flex; justify-content: center; gap: 20px; list-style: none; padding: 0;">
+                                        <li><a href="#">Support</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Disclaimer</a></li>
+                                        <li><a href="#">Add more</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!-- Social Icons (Right) -->
+                            <div style="flex: 1; text-align: right;">
+                                <div id="footer-socials">
+                                    <div class="socials inline-inside socials-colored">
+                                        <a href="#" target="_blank" title="Facebook" class="socials-item"><i class="fab fa-facebook-f facebook"></i></a>
+                                        <a href="#" target="_blank" title="Twitter" class="socials-item"><i class="fab fa-twitter twitter"></i></a>
+                                        <a href="#" target="_blank" title="Instagram" class="socials-item"><i class="fab fa-instagram instagram"></i></a>
+                                        <a href="#" target="_blank" title="YouTube" class="socials-item"><i class="fab fa-youtube youtube"></i></a>
+                                        <a href="#" target="_blank" title="Telegram" class="socials-item"><i class="fab fa-telegram telegram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+
+        <script>
+            jQuery('#waterdrop').raindrops({color:'#232526', canvasHeight:150, density: 0.1, frequency: 20});
+            
+            // Add intersection observer for footer animations
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('footer-animate');
+                        }
+                    });
+                },
+                { threshold: 0.3 }
+            );
+
+            // Observe the footer
+            const footer = document.querySelector('footer');
+            if (footer) {
+                observer.observe(footer);
+            }
+        </script>
+</body>
+</html>

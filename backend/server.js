@@ -37,7 +37,7 @@ const app = express();
 
 app.use(express.json({ limit: '10mb' }));
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'http://localhost:5173https://ecommerce-mpw2.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true,
 };

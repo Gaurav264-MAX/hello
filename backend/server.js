@@ -72,10 +72,6 @@ const reviewUpload = multer({
     }
 });
 
-// Basic route
-app.get('/', (req, res) => {
-    res.send("Hello from the backend");
-});
 
 // Login route
 app.post('/login', async (req, res) => {
